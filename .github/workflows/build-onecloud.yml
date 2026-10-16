@@ -15,6 +15,5 @@ jobs:
           # 指定玩客云和 CLI 参数
           armbian_board: "onecloud"
           armbian_release: "trixie"
-          # 强制纯 CLI（最小化）
-          armbian_build_desktop: "no"
-          armbian_kernel_configure: "no"
+          armbian_ui: "server"
+          armbian_runner_clean: "yes"
