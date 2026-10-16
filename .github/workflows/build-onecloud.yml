@@ -1,0 +1,20 @@
+name: Build Armbian CLI for OneCloud
+
+on:
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build-onecloud:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: armbian/build@main
+        with:
+          armbian_token: "${{ secrets.GITHUB_TOKEN }}"
+          # 关键：指定构建参数
+          armbian_target: "build"
+          # 指定玩客云和 CLI 参数
+          armbian_board: "onecloud"
+          armbian_release: "trixie"
+          # 强制纯 CLI（最小化）
+          armbian_build_desktop: "no"
+          armbian_kernel_configure: "no"
