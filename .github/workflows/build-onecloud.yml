@@ -6,6 +6,8 @@ on:
 jobs:
   build-onecloud:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: armbian/build@main
         with:
